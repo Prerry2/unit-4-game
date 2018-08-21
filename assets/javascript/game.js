@@ -12,7 +12,14 @@ var values = {
     sumOfClicked: (firstCrystal * numberFirstClicked + secondCrystal * numberSecondClicked + (thirdCrystal * numberThirdClicked) + (fourthCrystal * numberFourthClicked)),
     randomTotal: 0,
     totalsList: [7, 8, 10, 12, 13,],
-    crystalLists: {}
+    crystalLists: {
+        7: [],
+        8: [],
+        10: [],
+        12: [],
+        13: [],
+        
+        }
 }
 var gameFinished = 1
 

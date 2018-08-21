@@ -1,27 +1,33 @@
-var crystalValues = {
-    firstCrystal: 0,
-    secondCrystal: 0,
-    thirdCrystal: 0,
-    fourthCrystal: 0,
-    sumOfClicked: (Number(firstCrystal) + Number(secondCrystal) + Number(thirdCrystal) + Number(fourthCrystal)),
+var values = {
+    crystalValues: {
+        crystal1: 0,
+        crystal2: 0,
+        crystal3: 0,
+        crystal4: 0
+    },
+    numberFirstClicked: 0,
+    numberSecondClicked: 0,
+    numberThirdClicked: 0,
+    numberFourthClicked: 0,
+    sumOfClicked: (firstCrystal * numberFirstClicked + secondCrystal * numberSecondClicked + (thirdCrystal * numberThirdClicked) + (fourthCrystal * numberFourthClicked)),
     randomTotal: 0,
-    randomPartOne: 0,
-    randomPartTwo: 0}
+    totalsList: [7, 8, 10, 12, 13,],
+    crystalLists: {}
+}
 var gameFinished = 1
 
 var gameStart = function () {
     if (gameFinished == 1) {
         gameFinished = 0
-        // This will produce a random number between 20 and 999, both included
-        crystalValues.randomTotal = (Math.floor(Math.random() * 980) + 20)
-        console.log(crystalValues.randomTotal)
-        // This value, in order to have (hopefully) dissimilar non-zero numbers for the crystals, must be between 1 and total-6
-        crystalValues.firstCrystal = (Math.floor(Math.random() * (randomTotal - 7) + 1))
-        crystalValues.randomPartOne = crystalValues.randomTotal - crystalValues.firstCrystal
-        
-        crystalValues.secondCrystal = (Math.floor(Math.random() * (randomPartOne - n)))
-        crystalValues.randomPartTwo = crystalValues.randomPartOne - crystalValues.secondCrystal
-        crystalValues.thirdCrystal = (Math.floor(Math.random()))
-        crystalValues.fourthCrystal = (crystalValues.randomTotal - (crystalValues.randomPartTwo + crystalValues.thirdCrystal)) / (Math.floor(Math.random() * Math.floor(4)))
+        // Resetting otherwise untouched variables to default values
+        values.numberFirstClicked = 0
+        values.numberSecondClicked = 0
+        values.numberThirdClicked = 0
+        values.numberFourthClicked = 0
+        // Producing a random value to determine and assign which randomTotal will be used
+        values.randomTotal = values.totalsList[Math.floor(Math.random() * values.totalsList.length)]
+        // Produce a set of values from a list that is paired to randomTotal
+
     }
 }
+gameStart()

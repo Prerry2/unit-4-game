@@ -81,12 +81,12 @@ var values = {
   },
   gameRun: function() {
       this.getSumOfClicked(this.sumOfClicked)
-      if (this.sumOfClicked = this.randomTotal) {
+      if (this.sumOfClicked == this.randomTotal) {
           this.wins++
           $("#wins").text("Wins: " + this.wins)
           alert("You Win!")
           this.gameFinished = 1
-          this.gameStart()
+        //   this.gameStart()
       }
       else if (this.sumOfClicked > this.randomTotal) {
           this.losses++
@@ -106,6 +106,8 @@ var values = {
 };
 $(document).on("click", "#gem1", function(){
     values.numberFirstClicked++
+    console.log(values.numberFirstClicked)
+
     values.gameRun()
 })
 $(document).on("click", "#gem2", function(){
@@ -121,11 +123,4 @@ $(document).on("click", "#gem4", function(){
     values.gameRun()
 })
 values.gameStart()
-console.log(values.sumOfClicked)
-console.log(values.randomTotal)
-// Everything seems to work EXCEPT the buttons all cause wins???.
-// UMM??? THIS! DOESN'T! MAKE! SENSE!
-// The console log confirmed that the buttons worked like they should, as far as I can tell, and are not equal to 
-// the randomTotal
-// This shouldn't result in instantaneous winning on each click unless there is a mutation of one to the other somewhere
-// ... Oh. 
+// Everything seems to work EXCEPT the buttons don't add the values they ought (adding 0 instead)

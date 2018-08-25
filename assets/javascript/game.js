@@ -121,4 +121,11 @@ $(document).on("click", "#gem4", function(){
     values.gameRun()
 })
 values.gameStart()
+console.log(values.sumOfClicked)
+console.log(values.randomTotal)
 // Everything seems to work EXCEPT the buttons all cause wins???.
+// UMM??? THIS! DOESN'T! MAKE! SENSE!
+// The console log confirmed that the buttons worked like they should, as far as I can tell, and are not equal to 
+// the randomTotal
+// This shouldn't result in instantaneous winning on each click unless there is a mutation of one to the other somewhere
+// ... Oh. 

@@ -1,21 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="assets/css/style.css">
     <title>Is this what they mean by "Data Mining"?</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
-
 <body>
-
-
-    
-    <script src="assets/javascript/game.js"></script></
+    <div class="container">
+        <div class="row">
+            <div class="col-8 crystals">
+                <h1>Corundum Collector!</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 instructions">
+                <p>You will be given a random number at the start of the game.</p>
+                <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your
+                    total score.</p>
+                <p>You win the game by matching your total score to random number, you lose the game is our total score goes
+                    above the random number.</p>
+                <p>The value of each crystal is hidden from you until you click on it.</p>
+                <p>Each time when the game starts the game will change the values of each crystal</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8 number">
+                <h1 id="number">0</h1>
+            </div>
+            <div class="col-4 winlose">
+                <p id="wins">Win: 0</p>
+                <p id="losses">Loss: 0</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <img id="gem1" class="img-fluid" src="assets/images/blue-sapphire.jpg">
+            </div>
+            <div class="col-3">
+                <img id="gem2" class="img-fluid" src="assets/images/SapphireGlass.jpg">
+            </div>
+            <div class="col-3">
+                <img id="gem3" class="img-fluid" src="assets/images/ruby.jpg">
+            </div>
+            <div class="col-3">
+                <img id="gem4" class="img-fluid" src="assets/images/emerald-fake.jpg">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 score">
+                <p>Your total score is:</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 score">
+                <p id="scoreNumber">0</p>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
-
 </html>

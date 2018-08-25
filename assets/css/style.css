@@ -1,0 +1,34 @@
+body {
+    background-color:white;
+    background-image:
+    radial-gradient(midnightblue 9px, transparent 10px),        
+    repeating-radial-gradient(midnightblue 0, midnightblue 4px, transparent 5px, transparent 20px, midnightblue 21px, midnightblue 25px, transparent 26px, transparent 50px);    
+    background-size: 30px 30px, 90px 90px; 
+    background-position: 0 0;
+    color: white;
+}
+.crystals {
+    background-color: orange;
+}
+.instructions {
+    color: green;
+    background-color: palegoldenrod;
+}
+.number {
+    background-color: seagreen;
+    color: purple;
+}
+.winlose {
+    background-color: lightskyblue;
+    color: black;
+}
+.score {
+    background-color: teal;
+}
+.row {
+    margin: 10px;
+}
+img {
+    width: auto;
+    height: 100%;
+}

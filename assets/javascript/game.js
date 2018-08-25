@@ -83,14 +83,14 @@ var values = {
       this.getSumOfClicked(this.sumOfClicked)
       if (this.sumOfClicked = this.randomTotal) {
           this.wins++
-          $("#wins").text(this.wins)
+          $("#wins").text("Wins: " + this.wins)
           alert("You Win!")
           this.gameFinished = 1
           this.gameStart()
       }
       else if (this.sumOfClicked > this.randomTotal) {
           this.losses++
-          $("#losses").text(this.losses)
+          $("#losses").text("Loss: " + this.losses)
           alert("Your total is " + this.sumOfClicked)
           alert("You lost!")
           this.gameFinished = 1
@@ -104,21 +104,21 @@ var values = {
       }
   }
 };
-$("document").on("click", "#gem1", function(){
+$(document).on("click", "#gem1", function(){
     values.numberFirstClicked++
     values.gameRun()
 })
-$("document").on("click", "#gem2", function(){
+$(document).on("click", "#gem2", function(){
     values.numberSecondClicked++
     values.gameRun()
 })
-$("document").on("click", "#gem3", function(){
+$(document).on("click", "#gem3", function(){
     values.numberThirdClicked++
     values.gameRun()
 })
-$("document").on("click", "#gem4", function(){
+$(document).on("click", "#gem4", function(){
     values.numberForthClicked++
     values.gameRun()
 })
 values.gameStart()
-// Everything seems to work EXCEPT getting the click events to work.
+// Everything seems to work EXCEPT the buttons all cause wins???.

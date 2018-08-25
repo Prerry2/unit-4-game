@@ -1,3 +1,7 @@
+var $total = $("#number").text
+var $wins = $("#wins").text
+var $losses = $("#losses").text
+var $currentScore = $("#scoreNumber").text
 var values = {
   crystalValues: {
     crystal1: 0,
@@ -12,12 +16,12 @@ var values = {
   numberSecondClicked: 0,
   numberThirdClicked: 0,
   numberFourthClicked: 0,
-  sumOfClicked:
-//   "this"ed necessity status is being tested!
-    this.crystalValues.crystal1 * this.numberFirstClicked +
-    crystalValues.crystal2 * numberSecondClicked +
-    crystalValues.crystal3 * this.numberThirdClicked +
-    crystalValues.crystal4 * this.numberFourthClicked,
+  sumOfClicked: 0,
+  getSumOfClicked: function(x) {
+//   Unknown bug ruining the script right here... Undefined my arse!
+    x = values.crystalValues.crystal1 * values.numberFirstClicked + values.crystalValues.crystal2 * values.numberSecondClicked + values.crystalValues.crystal3 * values.numberThirdClicked + values.crystalValues.crystal4 * values.numberFourthClicked;
+    return x;
+    },
   randomTotal: 0,
   totalsList: [13, 17, 19, 23, 27, 29, 31, 37, 41, 42, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97],
   crystalLists: {
@@ -55,9 +59,8 @@ var values = {
       this.numberThirdClicked = 0;
       this.numberFourthClicked = 0;
       // Producing a random value to determine and assign which randomTotal will be used
-      this.randomTotal = this.totalsList[
-        Math.floor(Math.random() * this.totalsList.length)
-      ];
+      this.randomTotal = this.totalsList[Math.floor(Math.random() * this.totalsList.length)];
+      $total = this.randomTotal
       console.log(this.randomTotal);
       // Produce a set of values from a list that is paired to randomTotal
       this.arrayListHolder = this.crystalLists[this.randomTotal];
@@ -79,8 +82,47 @@ var values = {
       
       
     }
+  },
+  gameRun: function() {
+      this.getSumOfClicked(this.sumOfClicked)
+      if (this.sumOfClicked = this.randomTotal) {
+          this.wins++
+          $wins = this.wins
+          alert("You Win!")
+          this.gameFinished = 1
+          this.gameStart()
+      }
+      else if (this.sumOfClicked > this.randomTotal) {
+          this.losses++
+          $losses = this.losses
+          alert("Your total is " + this.sumOfClicked)
+          alert("You lost!")
+          this.gameFinished = 1
+          this.gameStart()
+      }
+      else {
+          alert("Your total is " + this.sumOfClicked)
+          $currentScore = this.sumOfClicked
+          //   Push everything to the HTML so people can see the situation, instead of everything being unobservable
+
+      }
   }
 };
-// $(document).on("click", "", )
+$("document").on("click", "#gem1", function(){
+    values.numberFirstClicked++
+    values.gameRun()
+})
+$("document").on("click", "#gem2", function(){
+    values.numberSecondClicked++
+    values.gameRun()
+})
+$("document").on("click", "#gem3", function(){
+    values.numberThirdClicked++
+    values.gameRun()
+})
+$("document").on("click", "#gem4", function(){
+    values.numberForthClicked++
+    values.gameRun()
+})
 values.gameStart()
 console.log(values.crystalValues.crystal1);

@@ -1,7 +1,3 @@
-var $total = $("#number").text
-var $wins = $("#wins").text
-var $losses = $("#losses").text
-var $currentScore = $("#scoreNumber").text
 var values = {
   crystalValues: {
     crystal1: 0,
@@ -60,7 +56,7 @@ var values = {
       this.numberFourthClicked = 0;
       // Producing a random value to determine and assign which randomTotal will be used
       this.randomTotal = this.totalsList[Math.floor(Math.random() * this.totalsList.length)];
-      $total = this.randomTotal
+      $("#number").text(this.randomTotal)
       console.log(this.randomTotal);
       // Produce a set of values from a list that is paired to randomTotal
       this.arrayListHolder = this.crystalLists[this.randomTotal];
@@ -87,14 +83,14 @@ var values = {
       this.getSumOfClicked(this.sumOfClicked)
       if (this.sumOfClicked = this.randomTotal) {
           this.wins++
-          $wins = this.wins
+          $("#wins").text(this.wins)
           alert("You Win!")
           this.gameFinished = 1
           this.gameStart()
       }
       else if (this.sumOfClicked > this.randomTotal) {
           this.losses++
-          $losses = this.losses
+          $("#losses").text(this.losses)
           alert("Your total is " + this.sumOfClicked)
           alert("You lost!")
           this.gameFinished = 1
@@ -102,7 +98,7 @@ var values = {
       }
       else {
           alert("Your total is " + this.sumOfClicked)
-          $currentScore = this.sumOfClicked
+          $("#scoreNumber").text(this.randomTotal)
           //   Push everything to the HTML so people can see the situation, instead of everything being unobservable
 
       }
@@ -125,4 +121,4 @@ $("document").on("click", "#gem4", function(){
     values.gameRun()
 })
 values.gameStart()
-console.log(values.crystalValues.crystal1);
+// Everything seems to work EXCEPT getting the click events to work.

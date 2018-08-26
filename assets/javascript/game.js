@@ -13,10 +13,9 @@ var values = {
   numberThirdClicked: 0,
   numberFourthClicked: 0,
   sumOfClicked: 0,
-  getSumOfClicked: function(x) {
-//   Unknown bug ruining the script right here... Undefined my arse!
-    x = values.crystalValues.crystal1 * values.numberFirstClicked + values.crystalValues.crystal2 * values.numberSecondClicked + values.crystalValues.crystal3 * values.numberThirdClicked + values.crystalValues.crystal4 * values.numberFourthClicked;
-    return x;
+  getSumOfClicked: function() {
+//   The issue I had was with the use of an unneeded parameter or not assigning in the function properly
+    this.sumOfClicked = values.crystalValues.crystal1 * values.numberFirstClicked + values.crystalValues.crystal2 * values.numberSecondClicked + values.crystalValues.crystal3 * values.numberThirdClicked + values.crystalValues.crystal4 * values.numberFourthClicked;
     },
   randomTotal: 0,
   totalsList: [13, 17, 19, 23, 27, 29, 31, 37, 41, 42, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97],
@@ -80,7 +79,7 @@ var values = {
     }
   },
   gameRun: function() {
-      this.getSumOfClicked(this.sumOfClicked)
+      this.getSumOfClicked()
       if (this.sumOfClicked == this.randomTotal) {
           this.wins++
           $("#wins").text("Wins: " + this.wins)
